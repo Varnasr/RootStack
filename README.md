@@ -1,150 +1,72 @@
-
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
-  <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/changelog-updating-blue.svg" alt="Changelog"></a>
-  <a href="https://buymeacoffee.com/varnasra"><img src="https://img.shields.io/badge/Support-BuyMeACoffee-yellow.svg" alt="Support Me"></a>
-</p>
-
-
 # RootStack
 
-> Foundational data schemas, seed datasets, and queries powering the OpenStacks ecosystem.
+**Foundational data schemas for the OpenStacks ecosystem.**
+
+[![Part of OpenStacks](https://img.shields.io/badge/Part%20of-OpenStacks-blue)](https://openstacks.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status: Early Stage](https://img.shields.io/badge/Status-Early%20Stage-orange)]()
+
+> The database layer for OpenStacks — schemas, seed data, and queries.
 
 ---
 
-![RootStack Banner Placeholder](https://via.placeholder.com/1200x300.png?text=RootStack+-+OpenStacks+Foundation)
+## Status
 
----
+**This repository is in early development.** The architecture and goals are documented below, but the actual SQL schemas, seed data, and queries have not yet been implemented. Contributions are welcome to help build this out.
 
-# 📚 Table of Contents
-- [About](#about)
-- [Architecture](#architecture)
-- [Folder Structure](#folder-structure)
-- [Installation & Usage](#installation--usage)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Support Me](#support-me)
-- [Citation](#citation)
-- [Contact](#contact)
-- [Changelog](#changelog)
+## Vision
 
----
+RootStack will provide the foundational data layer for the OpenStacks ecosystem:
 
-# 📖 About
+- **Structured schemas** (PostgreSQL/SQLite) for development sector data
+- **Seed datasets** for testing and demonstration
+- **Example queries** for common analysis patterns
+- **Migration scripts** for schema evolution
 
-**RootStack** is the foundational database layer for the OpenStacks family of tools.
-It provides structured database schemas, seed datasets, and example queries for modular, scalable, and open development.
+### Planned Architecture
 
-RootStack serves as the backbone for BridgeStack (API services) and ViewStack (frontend visualization).
-
----
-
-# 🏛️ Architecture
-
-```plaintext
-[ RootStack (Database Layer) ]
-         ⇅
-[ BridgeStack (API Layer) ]
-         ⇅
-[ ViewStack (Frontend Layer) ]
+```
+RootStack (Database) → BridgeStack (API) → ViewStack (Frontend)
 ```
 
-RootStack provides clean, well-structured data that flows upward into APIs and user interfaces.
+RootStack feeds data to [BridgeStack](https://github.com/Varnasr/BridgeStack) via SQL, which exposes it through a REST API to [ViewStack](https://github.com/Varnasr/ViewStack).
 
----
+### Planned Structure
 
-# 📁 Folder Structure
-
-```plaintext
+```
 RootStack/
 ├── schemas/
-│   └── tables.sql
+│   ├── tables.sql          # Core table definitions
+│   └── migrations/         # Schema version changes
 ├── seed_data/
-│   └── seed_initial.sql
+│   └── seed_initial.sql    # Test/demo data
 ├── queries/
-│   └── example_queries.sql
-├── README.md
+│   └── example_queries.sql # Common query patterns
+└── docs/
+    └── data_dictionary.md  # Field descriptions and relationships
 ```
 
----
+## How to Contribute
 
-# ⚙️ Installation & Usage
+This is a great repo to contribute to if you have experience with:
+- PostgreSQL or SQLite schema design
+- Development sector data structures (surveys, indicators, program data)
+- Database migration workflows
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Varnasr/RootStack.git
-   cd RootStack
-   ```
+See the [OpenStacks hub](https://github.com/Varnasr/OpenStacks-for-Change) for ecosystem-wide contribution guidelines.
 
-2. Set up the database (PostgreSQL recommended):
-   ```bash
-   psql -U your_user -d your_database -f schemas/tables.sql
-   psql -U your_user -d your_database -f seed_data/seed_initial.sql
-   ```
+## How It Connects
 
-3. Explore and adapt queries from `/queries/`.
+| Stack | Role | Link |
+|-------|------|------|
+| **RootStack** (this repo) | Database schemas & seed data | You are here |
+| [BridgeStack](https://github.com/Varnasr/BridgeStack) | API backend (FastAPI) | Consumes RootStack data |
+| [ViewStack](https://github.com/Varnasr/ViewStack) | Frontend UI | Displays BridgeStack API data |
 
----
+## License
 
-# 🛣️ Roadmap
-
-- [ ] Add multiple schema versions (PostgreSQL + SQLite)
-- [ ] Expand sample seed datasets
-- [ ] Add database migration templates
-- [ ] Integrate versioning system
-- [ ] Optimize queries for scalability
+MIT — free to use, modify, and share. See [LICENSE](LICENSE).
 
 ---
 
-# 🤝 Contributing
-
-Contributions are welcome! ✨
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
----
-
-# 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-# ☕ Support Me
-
-If you find RootStack helpful, [buy me a coffee](https://buymeacoffee.com/varnasra)!
-
----
-
-# 📝 Citation
-
-```
-@misc{rootstack2025,
-  author = {Varna Sri Raman},
-  title = {RootStack: Foundational Database Layer of OpenStacks},
-  year = {2025},
-  url = {https://github.com/Varnasr/RootStack}
-}
-```
-
----
-
-# 📬 Contact
-
-- 📧 Email: varna.sr@gmail.com
-- 🌐 Threads: [@varnasriraman](https://www.threads.net/@varnasriraman)
-
----
-
-# 📈 Changelog
-
-This project uses an [auto-updating CHANGELOG.md](CHANGELOG.md) generated by GitHub Actions.
-
----
-
-
----
-
-<p align="center">
-Made with ❤️ by <b>Varna Sri Raman</b> • <a href="https://buymeacoffee.com/varnasra">Support my work</a> • <a href="mailto:varna.sr@gmail.com">Contact</a>
-</p>
+**Created by [Varna Sri Raman](https://github.com/Varnasr)** — Development Economist & Social Researcher
