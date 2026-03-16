@@ -2,3 +2,18 @@
 *.sqlite
 *.sqlite3
 .DS_Store
+
+# Added by git standards propagation
+# Environment files
+.env
+.env.*
+!.env.example
+node_modules/
+Thumbs.db
+*.log
+build/
+dist/
+coverage/
+.vscode/
+.idea/
+*.swp
