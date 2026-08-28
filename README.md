@@ -2,7 +2,26 @@
 
 **Foundational data schemas, seed data, and queries for the OpenStacks ecosystem.**
 
+> ## ⚠️ This repository is retired
+>
+> **RootStack is archived and read-only.** It is no longer maintained and will not
+> receive updates, fixes, or responses to issues.
+>
+> RootStack was the database layer of a RootStack → BridgeStack → ViewStack pipeline.
+> That pipeline carried most of the OpenStacks maintenance cost and the research
+> toolkits never actually depended on it, so all three have been retired together.
+>
+> **Nothing has been deleted.** The schemas, seed data, and queries below stay public,
+> forkable, and citable. Clone it and use it — just don't expect maintenance.
+>
+> **If you came here for Indian development data that is maintained**, use
+> [How India Lives](https://github.com/Varnasr/how-india-lives) (205 state-level indicators)
+> or [PolicyDhara](https://github.com/Varnasr/PolicyDhara) (schemes and budgets, auto-updating).
+>
+> Full reasoning: the [OpenStacks maintenance policy](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md).
+
 [![Part of OpenStacks](https://img.shields.io/badge/Part%20of-OpenStacks-blue)](https://openstacks.dev)
+[![Status: Retired](https://img.shields.io/badge/Status-Retired-64748b?style=flat-square)](https://github.com/Varnasr/OpenStacks-for-Change/blob/main/MAINTENANCE.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > The database layer for OpenStacks — structured development data for India and South Asia.
@@ -140,7 +159,7 @@ Contributions welcome — especially:
 - **PostgreSQL port** — Adapt schemas for PostgreSQL deployment
 - **Migration scripts** — Schema versioning for production use
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+See [contributing guidelines](https://github.com/Varnasr/.github/blob/main/CONTRIBUTING.md) for guidelines.
 
 ## License
 
